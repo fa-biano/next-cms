@@ -7,7 +7,11 @@ export function Header() {
   const [top, setTop] = useState(true)
 
   const scrollHandler = () => {
-    window.scrollY > 10 ? setTop(false) : setTop(true)
+    if (window.scrollY > 10) {
+      setTop(false)
+    } else {
+      setTop(true)
+    }
   }
 
   useEffect(() => {
