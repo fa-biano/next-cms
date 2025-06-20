@@ -38,3 +38,12 @@ export interface ICosmicJSResponse {
     }
   }
 }
+
+interface ISubmenu {
+  slug: string
+  title: string
+}
+
+export interface ICosmicJSMenu {
+  objects: ISubmenu[]
+}
