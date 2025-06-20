@@ -5,7 +5,7 @@ import { X, Menu } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export function Submenu() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
     
   useEffect(() => {
     const handleResize = () => {
