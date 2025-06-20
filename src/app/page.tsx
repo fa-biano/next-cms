@@ -1,5 +1,6 @@
 import { Container } from '@/components/container'
 import Hero from '@/components/hero'
+import { Footer } from '@/components/home/footers'
 import { Services } from '@/components/home/services'
 import { Submenu } from '@/components/home/subMenu'
 import { getHomeData } from '@/utils/actions/cosmicjs'
@@ -21,6 +22,7 @@ export default async function Home() {
 
       <Container>
         <Services object={object} />
+        <Footer object={object} />
       </Container>
     </main>
   )
