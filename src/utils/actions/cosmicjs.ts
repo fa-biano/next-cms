@@ -6,7 +6,7 @@ interface IServices {
   description: string      
 }
 
-interface ICosmicJSResponse {
+export interface ICosmicJSResponse {
   object: {
     slug: string
     title: string
