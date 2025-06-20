@@ -3,8 +3,9 @@ import Link from 'next/link'
 import styles from './styles.module.scss'
 import { X, Menu } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import { ICosmicJSMenu } from '@/utils/IComiscjs.type'
 
-export function Submenu() {
+export function Submenu({ menu }: { menu: ICosmicJSMenu}) {
   const [isOpen, setIsOpen] = useState(false)
     
   useEffect(() => {
@@ -34,10 +35,11 @@ export function Submenu() {
           </button>
         )}
 
-        <li>
-          <Link href='/post/pagina-1'> Pagina 1 </Link>
-          <Link href='/post/pagina-2'> Pagina 2 </Link>
-        </li>
+          { menu.objects.map((item) => (
+            <li key={item.slug}>
+              <Link href={`/post/${item.slug}`}> {item.title} </Link>
+            </li>
+          ))}
       </ul>
     </section>
   )
