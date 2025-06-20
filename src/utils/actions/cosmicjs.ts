@@ -1,43 +1,4 @@
-interface IServices {
-  image: {
-    url: string
-    imgix_url: string
-  }
-  description: string      
-}
-
-export interface ICosmicJSResponse {
-  object: {
-    slug: string
-    title: string
-    type: string
-    metadata: {
-      banner: {
-        url: string
-        imgix_url: string
-      }
-      heading: string
-      cta_button: {
-        title: string
-        url: string
-      }
-      about: {
-        description: string
-        banner: {
-          url: string
-          imgix_url: string
-        }
-      }
-      services: IServices[]
-      contact: {
-        email: string
-        phone: string
-        address: string
-        time: string
-      }
-    }
-  }
-}
+import { ICosmicJSResponse } from '../IComiscjs.type'
 
 export const getHomeData = async (): Promise<ICosmicJSResponse> => {
   const { NEXT_PUBLIC_COSMICJS_API_URL, COSMICJS_READ_KEY } = process.env

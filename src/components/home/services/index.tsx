@@ -1,4 +1,4 @@
-import { ICosmicJSResponse } from '@/utils/actions/cosmicjs'
+import { ICosmicJSResponse } from '@/utils/IComiscjs.type'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
