@@ -4,6 +4,42 @@ import Hero from '@/components/hero'
 import { Phone } from 'lucide-react'
 import { Container } from '@/components/container'
 import Image from 'next/image'
+import { Metadata } from 'next'
+import { metadata } from '@/app/layout'
+
+export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
+  const { slug } = await params
+  
+  try {
+    const { objects } = await getPageBySlug(slug)
+    if (!objects) return metadata
+
+    const pageSlugString = slug.replace('-', ' ')
+    return {
+      metadataBase: new URL("http://localhost:3000"),
+      title: `DevMotors - ${objects[0].title}`,
+      description: `${objects[0].metadata.description.text}`,
+      keywords: ["devmotors", `${pageSlugString}`, `devmotors ${pageSlugString}`],
+      openGraph: {
+        title: `DevMotors - ${objects[0].title}`,
+        images: [objects[0].metadata.banner.url]
+      },
+      robots:{
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true,
+        }
+      }
+    }
+  } catch (err) {
+    console.log(err)
+    return metadata
+  }
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }){
   const { slug } = await params
