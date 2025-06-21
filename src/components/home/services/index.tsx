@@ -18,6 +18,7 @@ export function Services({ object }: ICosmicJSResponse){
             alt="Imagem ilustrativa sobre a empresa"
             quality={100}
             fill={true}
+            sizes='(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw'
             src={object.metadata.about.banner.url}
           />
         </div>
@@ -35,6 +36,7 @@ export function Services({ object }: ICosmicJSResponse){
                 alt="Imagem do serviço"
                 quality={100}
                 fill={true}
+                sizes='(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw'
                 src={service.image.url}
               />
             </div>
