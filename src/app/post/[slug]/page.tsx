@@ -16,10 +16,10 @@ export const generateMetadata = async ({ params }: { params: Promise<{ slug: str
 
     const pageSlugString = slug.replace('-', ' ')
     return {
-      metadataBase: new URL("http://localhost:3000"),
+      metadataBase: new URL('http://localhost:3000'),
       title: `DevMotors - ${objects[0].title}`,
       description: `${objects[0].metadata.description.text}`,
-      keywords: ["devmotors", `${pageSlugString}`, `devmotors ${pageSlugString}`],
+      keywords: ['devmotors', `${pageSlugString}`, `devmotors ${pageSlugString}`],
       openGraph: {
         title: `DevMotors - ${objects[0].title}`,
         images: [objects[0].metadata.banner.url]
