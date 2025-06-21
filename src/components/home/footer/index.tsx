@@ -53,11 +53,6 @@ export function Footer({ object }: ICosmicJSResponse){
         <Phone size={24} color="#FFF" />
         {object.metadata.cta_button.title}
       </a>
-
-
-      <p className={styles.copyText}>
-        Todos direitos reservados {object.title} @{`${new Date().getFullYear()}`}
-      </p>
     </footer>
   )
 }

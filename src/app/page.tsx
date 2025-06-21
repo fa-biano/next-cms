@@ -1,6 +1,6 @@
 import { Container } from '@/components/container'
 import Hero from '@/components/hero'
-import { Footer } from '@/components/home/footers'
+import { Footer } from '@/components/home/footer'
 import { Services } from '@/components/home/services'
 import { Submenu } from '@/components/home/subMenu'
 import { getHomeData, getSubmenuData } from '@/utils/actions/cosmicjs'
