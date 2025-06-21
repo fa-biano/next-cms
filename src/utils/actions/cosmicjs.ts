@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation'
 import { ICosmicJSMenu, ICosmicJSPageDetail, ICosmicJSResponse } from '../IComiscjs.type'
 
 const { NEXT_PUBLIC_COSMICJS_API_URL, COSMICJS_READ_KEY } = process.env
@@ -48,7 +49,7 @@ export const getPageBySlug = async (slug: string): Promise<ICosmicJSPageDetail> 
     if (!response.ok) throw new Error('Failed to fetch page by slug')
     return response.json()
   } catch (error) {
-    console.log('error', JSON.stringify(error, null, 2))
-    throw new Error('Failed to fetch page by slug')
+    console.log('error', error)
+    redirect('/')
   }
 }
