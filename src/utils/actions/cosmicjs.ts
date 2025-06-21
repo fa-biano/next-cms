@@ -9,7 +9,7 @@ export const getHomeData = async (): Promise<ICosmicJSResponse> => {
   const url = `${BASE_URL}/${urlParams}&${READ_KEY_PARAM}&depth=1&props=slug,title,metadata,type`
 
   try {
-    const response = await fetch(url, { next: { revalidate: 120 }})
+    const response = await fetch(url, { next: { revalidate: 120 } })
 
     if (!response.ok) throw new Error('Failed to fetch data')
     return response.json()
@@ -24,7 +24,7 @@ export const getSubmenuData = async (): Promise<ICosmicJSMenu> => {
   const url = `${BASE_URL}?${urlParams}&${READ_KEY_PARAM}&depth=1&props=slug,title`
 
   try {
-    const response = await fetch(url, { next: { revalidate: 120 }})
+    const response = await fetch(url, { next: { revalidate: 120 } })
 
     if (!response.ok) throw new Error('Failed to fetch menu data')
     return response.json()
@@ -44,7 +44,7 @@ export const getPageBySlug = async (slug: string): Promise<ICosmicJSPageDetail> 
   const url = `${BASE_URL}?${queryParams.toString()}`
 
   try {
-    const response = await fetch(url, { next: { revalidate: 120 }})
+    const response = await fetch(url, { next: { revalidate: 120 } })
     if (!response.ok) throw new Error('Failed to fetch page by slug')
     return response.json()
   } catch (error) {
