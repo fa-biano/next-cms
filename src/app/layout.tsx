@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: 'DevMotors - Sua oficina especializada!',
   description: 'Oficina de carros em São Paulo',
   keywords: ["oficina", "oficina carros", "carros", "manutenção de carros"],
